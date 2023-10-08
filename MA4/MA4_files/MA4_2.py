@@ -48,14 +48,15 @@ def main():
         end = pc()
         cpp.append(end - start)
 
-    plt.scatter(list(range(20,31)), py, color='red', label='Python')
-    plt.scatter(list(range(30,46)), cpp, color='yellow', label='Cpp')
-    plt.scatter(list(range(20,31)), nba, color='blue', label='Numba')
+    plt.scatter(list(range(20,31)), py, color='red', label='Python', s=10)
+    plt.scatter(list(range(30,46)), cpp, color='green', label='Cpp', s=10)
+    plt.scatter(list(range(20,31)), nba, color='blue', label='Numba', s=10)
     
     plt.legend()
 
     plt.xlabel('n')
-    plt.ylabel('Time (seconds)')
+    plt.yscale('log')
+    plt.ylabel('Time / seconds (log10 scale)')
 
     plt.savefig('Results.png')
 
